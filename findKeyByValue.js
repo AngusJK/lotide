@@ -6,6 +6,24 @@ const assertEqual = function(actual, expected) {
   }
 }
 
+function eqArrays(firstArray, secondArray) {
+  let inconsistencies = 0;
+  let status = true;
+  if (firstArray.length === secondArray.length) {
+    for (let i = 0; i < firstArray.length; i++) {
+      if (firstArray[i] !== secondArray[i]) {
+        inconsistencies += 1;
+      }
+   }
+  } else {
+    inconsistencies += 1;
+  }
+  if (inconsistencies > 0) {
+    status = false;
+  }
+  return status;
+}
+
 const findKeyByValue = function(object, value) {
   for (let key in object) {
     if (object[key] === value) {
