@@ -1,6 +1,6 @@
 const assertEqual = require('./assertEqual');
 
-function eqArrays(firstArray, secondArray) {
+const eqArrays = function(firstArray, secondArray) {
   let inconsistencies = 0;
   let status = true;
   if (firstArray.length === secondArray.length) {
@@ -12,7 +12,7 @@ function eqArrays(firstArray, secondArray) {
       } else if (firstArray[i] !== secondArray[i]) {
         inconsistencies += 1;
       }
-   }
+    }
   } else {
     inconsistencies += 1;
   }
@@ -20,6 +20,6 @@ function eqArrays(firstArray, secondArray) {
     status = false;
   }
   return status;
-}
+};
 
 module.exports = eqArrays;
