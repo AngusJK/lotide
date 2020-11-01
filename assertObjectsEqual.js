@@ -1,3 +1,6 @@
+//const eqArrays = require('./eqArrays');
+const eqObjects = require('./eqObjects');
+
 const assertObjectsEqual = function(firstObject, secondObject) {
   const inspect = require('util').inspect;
   if (eqObjects(firstObject, secondObject)) {
@@ -6,7 +9,7 @@ const assertObjectsEqual = function(firstObject, secondObject) {
     console.log(`🔴 Assertion failed: ${inspect(firstObject)} !== ${inspect(secondObject)}`);
   }
 }
-
+/*
 function eqArrays(firstArray, secondArray) {
   let inconsistencies = 0;
   let status = true;
@@ -43,11 +46,6 @@ const eqObjects = function(object1, object2) {
   }
   return result;
 }
+*/
 
-const letters1 = { a: "1", b: "2" };
-const letters2 = { b: "2", a: "1" };
-const letters3 = { a: "1", b: "3" };
-
-assertObjectsEqual(letters1, letters2); // => should pass
-assertObjectsEqual(letters1, letters3); // => should fail
-assertObjectsEqual(letters2, letters3); // => should fail
+module.exports = assertObjectsEqual;
