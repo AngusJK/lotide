@@ -11,23 +11,14 @@ const check = function(num) {
     }
   }
   for (let i = stringNum.length - 3; i >= 0; i = i - 2) {
-   let value = parseInt(stringNum.charAt(i));
-   sum += value;
+    let value = parseInt(stringNum.charAt(i));
+    sum += value;
   }
   if (sum % 10 === 0) {
-    console.log(`💚 Congratulations! ${num} is (possibly) a valid identification number!`)
+    return true;
   } else {
-    console.log("❌ Sorry, this number is not valid. Try again.");
+    return false;
   }
-}
+};
 
-check(3498543678921080);
-check(3498543678921081);
-check(3498543678921082);
-check(3498543678921083);
-check(3498543678921084);
-check(3498543678921085);
-check(3498543678921086);
-check(3498543678921087);
-check(3498543678921088);
-check(3498543678921089);
+module.exports = check;
